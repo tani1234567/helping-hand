@@ -5,7 +5,7 @@ import Drawer from "./Drawer";
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello from Home</Text>
+      <Text style={styles.text}>Hello from Home. This is a sample text.</Text>
     </View>
   );
 }
