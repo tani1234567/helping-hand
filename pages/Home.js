@@ -1,24 +1,79 @@
 import React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import {
+  ScrollView,
+  View,
+  Text,
+  Image,
+  StyleSheet,
+} from "react-native";
 import Drawer from "./Drawer";
+
+const images = {
+  widget1: require("../icons/best.jpg"),
+  widget2: require("../icons/irctc.png"),
+  widget3: require("../icons/bmc.jpg"),
+  widget4: require("../icons/hospital.png"),
+  widget5: require("../icons/Road.png"),
+  widget6: require("../icons/PWD.jpg"),
+  widget7: require("../icons/other.png"),
+};
 
 export default function Home() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello from Home. This is a sample text.</Text>
-    </View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.widget}>
+          <Image style={styles.icon} source={images.widget1} />
+        <Text style={styles.text}>BEST</Text>
+      </View>
+      <View style={styles.widget}>
+        <Image style={styles.icon} source={images.widget2} />
+        <Text style={styles.text}>IRCTC</Text>
+      </View>
+      <View style={styles.widget}>
+        <Image style={styles.icon} source={images.widget3} />
+        <Text style={styles.text}>Water and Waste</Text>
+      </View>
+      <View style={styles.widget}>
+        <Image style={styles.icon} source={images.widget4} />
+        <Text style={styles.text}>Public Healthcare</Text>
+      </View>
+      <View style={styles.widget}>
+        <Image style={styles.icon} source={images.widget5} />
+        <Text style={styles.text}>Road & Transport</Text>
+      </View>
+      <View style={styles.widget}>
+        <Image style={styles.icon} source={images.widget6} />
+        <Text style={styles.text}>Recreational Areas</Text>
+      </View>
+      <View style={styles.widget}>
+        <Image style={styles.icon} source={images.widget7} />
+        <Text style={styles.text}>Other Services</Text>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center", // Center vertically
-    alignItems: "center", // Center horizontally
-    backgroundColor: "#fff",
+    paddingTop: 25,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-evenly",
+    paddingVertical: 20,
+  },
+  widget: {
+    alignItems: "center",
+    marginBottom: 20,
+    padding: 12,
+  },
+  icon: {
+    width: 140,
+    height: 120,
+    marginBottom: 10,
+    borderRadius: 10,
   },
   text: {
-    fontSize: 24,
+    fontSize: 16,
     fontWeight: "bold",
   },
 });

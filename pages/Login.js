@@ -58,7 +58,7 @@ const Login = ({ navigation: { navigate } }) => {
         onChangeText={setPassword}
       />
       <Button title="Login" onPress={handleLogin} />
-      <Text style={styles.link} onPress={() => navigation.navigate("Register")}>
+      <Text style={styles.link} onPress={() => navigate("Register")}>
         Don't have an account? Register here
       </Text>
     </View>
