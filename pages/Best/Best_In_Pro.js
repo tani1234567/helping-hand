@@ -1,10 +1,10 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
-export default function Best() {
+export default function Best_Prog() {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello from Best</Text>
+      <Text style={styles.text}>Hello from Progress Page</Text>
     </View>
   );
 }

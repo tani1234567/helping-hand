@@ -4,6 +4,9 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Drawer from "./pages/Drawer";
+import Best from "./pages/Best/Best_Reg";
+import NavTab from "./pages/Best/Navigator";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +21,8 @@ const App = () => {
           component={Drawer}
           options={{ headerShown: false }}
         />
+        <Stack.Screen name="BestHome" component={Best} />
+        <Stack.Screen name="Best" component={NavTab} />
       </Stack.Navigator>
     </NavigationContainer>
   );

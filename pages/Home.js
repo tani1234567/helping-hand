@@ -1,12 +1,18 @@
 import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import {
   ScrollView,
   View,
   Text,
   Image,
   StyleSheet,
+  Pressable,
 } from "react-native";
 import Drawer from "./Drawer";
+
+import IRCTC_REG from "./Irctc/IRCTC_HOME";
 
 const images = {
   widget1: require("../icons/best.jpg"),
@@ -18,11 +24,15 @@ const images = {
   widget7: require("../icons/other.png"),
 };
 
-export default function Home() {
+const Stack = createNativeStackNavigator();
+
+export default function Home({ navigation }) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.widget}>
+        <Pressable onPress={() => navigation.navigate("Best")}>
           <Image style={styles.icon} source={images.widget1} />
+        </Pressable>
         <Text style={styles.text}>BEST</Text>
       </View>
       <View style={styles.widget}>
